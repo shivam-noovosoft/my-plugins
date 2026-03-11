@@ -1,0 +1,10 @@
+{
+  "name": "my-plugin-marketplace",
+  "plugins": [
+    {
+      "name": "my-plugins",
+      "description": "Our team's frontend conventions",
+      "source": "."
+    }
+  ]
+}
