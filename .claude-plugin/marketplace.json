@@ -1,10 +1,16 @@
 {
   "name": "my-plugin-marketplace",
+  "owner": {
+    "name": "shivam-noovosoft"
+  },
   "plugins": [
     {
       "name": "my-plugins",
       "description": "Our team's frontend conventions",
-      "source": "."
+      "source": {
+        "source": "local",
+        "path": "."
+      }
     }
   ]
 }
