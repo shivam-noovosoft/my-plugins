@@ -7,10 +7,7 @@
     {
       "name": "my-plugins",
       "description": "Our team's frontend conventions",
-      "source": {
-        "source": "local",
-        "path": "."
-      }
+      "source": "."
     }
   ]
 }
