@@ -5,9 +5,9 @@
   },
   "plugins": [
     {
-      "name": "my-plugins",
+      "name": "my-plugin",
       "description": "Our team's frontend conventions",
-      "source": "."
+      "source": "./plugins/my-plugin"
     }
   ]
 }

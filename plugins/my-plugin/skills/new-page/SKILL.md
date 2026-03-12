@@ -15,6 +15,8 @@ Parse `$ARGUMENTS` as: `<entity-name> [route-path]`
 - entity-name: the backend entity (e.g., `FuelLog`, `crop-revenue`)
 - route-path: optional App Router path (e.g., `farming/fuel-logs`). If omitted, infer from entity name.
 
+**If `$ARGUMENTS` is empty or not provided**, prompt the user to supply at least an entity name before proceeding. Do not attempt to scaffold with placeholder names.
+
 Before generating, read the backend DTO/entity files to understand the exact fields and types. If no backend exists yet, ask the user for the field list.
 
 ## Steps
@@ -135,7 +137,9 @@ export default function EntityNamesPage() {
       setForm(INITIAL_FORM);
       refetch();
     } catch (err) {
-      alert(err instanceof Error ? err.message : tc("failedToSave", { entity: t("entityPlural") }));
+      console.error("Save failed:", err);
+      // TODO: Replace with your app's toast/notification system
+      // e.g., toast.error(err instanceof Error ? err.message : tc("failedToSave", { entity: t("entityPlural") }));
     }
   };
 
@@ -210,6 +214,6 @@ Add a nav link for the new page in the appropriate section. Read the file first 
 
 ## After Creating Files
 
-1. Run lint: `cd frontend && npx eslint src/app/{route-path}/page.tsx --fix`
+1. Run lint (if ESLint is configured): `cd frontend && [ -f .eslintrc* ] || [ -f eslint.config.* ] && npx eslint src/app/{route-path}/page.tsx --fix || echo "ESLint not configured, skipping lint step"`
 2. Verify it compiles: `cd frontend && npx tsc --noEmit`
 3. Summarize what was created/modified with file paths

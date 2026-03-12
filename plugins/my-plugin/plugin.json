@@ -1,0 +1,6 @@
+{
+  "name": "my-plugin",
+  "description": "Our team's frontend conventions",
+  "version": "1.0.0",
+  "author": { "name": "Shivam" }
+}

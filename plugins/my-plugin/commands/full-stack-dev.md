@@ -1,3 +1,9 @@
+---
+name: full-stack-dev
+description: Start the full stack development environment (PostgreSQL, backend, frontend)
+allowed-tools: Bash
+---
+
 Start the full stack development environment.
 
 1. Ensure PostgreSQL is running: `docker-compose up db -d`
